@@ -74,6 +74,30 @@ constellation-works/
     └── App.jsx         # Main application component
 ```
 
+## 🚀 Deployment (Railway)
+
+This project is configured for one-click Railway deployment.
+
+### Quick Deploy
+1. Push this repo to GitHub
+2. Go to [railway.app](https://railway.app) and sign in
+3. Click "New Project" → "Deploy from GitHub repo"
+4. Select your ConstellationWorks repository
+5. Railway auto-detects the Dockerfile and deploys!
+
+### Custom Domain Setup
+After deployment:
+1. Go to your Railway project → Settings → Domains
+2. Add your custom domain (e.g., `constellationworks.app`)
+3. Railway provides DNS records to add at your registrar
+4. Add a CNAME record pointing to your Railway URL
+
+### Environment
+- Build: Docker (Node 20 + Nginx)
+- Static hosting with SPA routing
+- Gzip compression enabled
+- Security headers configured
+
 ## 📜 License
 
 Licensed under [Apache License 2.0](LICENSE)
