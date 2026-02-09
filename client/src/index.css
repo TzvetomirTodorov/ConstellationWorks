@@ -1,0 +1,352 @@
+:root {
+  --midnight: #0a0a1a;
+  --deep-space: #12122a;
+  --nebula: #1a1a3a;
+  --stardust: #2a2a4a;
+  --gold: #d4af37;
+  --gold-light: #f0d875;
+  --silver: #c0c0c0;
+  --cosmic-blue: #4a6fa5;
+  --aurora: #7fffd4;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0c0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--midnight);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Starfield background */
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(1px 1px at 20% 30%, white, transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 50% 10%, white, transparent),
+    radial-gradient(2px 2px at 60% 40%, rgba(212,175,55,0.6), transparent),
+    radial-gradient(1px 1px at 70% 90%, white, transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1.5px 1.5px at 90% 60%, rgba(212,175,55,0.5), transparent),
+    radial-gradient(1px 1px at 10% 80%, white, transparent),
+    radial-gradient(1px 1px at 30% 50%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 85% 85%, rgba(212,175,55,0.4), transparent);
+  background-size: 100% 100%;
+  animation: twinkle 8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, var(--midnight) 0%, transparent 100%);
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-star {
+  font-size: 28px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 300;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+}
+
+.hero-title .star {
+  color: var(--gold);
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 3vw, 24px);
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 40px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--midnight);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.btn-secondary:hover {
+  background: var(--gold);
+  color: var(--midnight);
+}
+
+/* Sections */
+.section {
+  padding: 100px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+.section-title .star {
+  color: var(--gold);
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(212,175,55,0.2);
+  padding: 40px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--gold);
+}
+
+.card-text {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Grid layouts */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.3);
+  color: var(--text-primary);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.08);
+}
+
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Footer */
+.footer {
+  background: var(--deep-space);
+  padding: 60px 40px 30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.footer-copyright {
+  color: var(--text-secondary);
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hero {
+    padding: 100px 20px 60px;
+  }
+  
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
